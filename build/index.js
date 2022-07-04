@@ -1,7 +1,11 @@
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
 }) : (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     o[k2] = m[k];
@@ -129,7 +133,7 @@ app.get('/settings', function (req, res) {
     });
 });
 app.use('/', express_1.default.static('src/public'));
-app.listen(8080, () => console.log('pog http://localhost:8080'));
+app.listen(8000, () => console.log('Running at http://localhost:8000'));
 exports.default = require('require-dir')();
 setInterval(() => {
     console.log(process.memoryUsage().heapUsed / 1024 / 1024 + 'mb');

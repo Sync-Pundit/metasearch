@@ -137,7 +137,7 @@ app.get('/settings', function(req, res) {
 
 app.use('/', express.static('src/public'))
 
-app.listen(8080, () => console.log('http://localhost:8080'))
+app.listen(8000, () => console.log('Running at http://localhost:8000'))
 
 export default require('require-dir')()
 
